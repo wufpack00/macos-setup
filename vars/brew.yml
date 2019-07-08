@@ -1,0 +1,39 @@
+---
+# packages installed via brew install
+homebrew_installed_packages:
+  - bash-completion
+  - curl
+  - dockutil
+  - exiftool
+  - gettext
+  - git
+  - readline
+  - ssh-copy-id
+  - openssl
+  - wget
+  - zsh
+
+# taps you would like to make sure Homebrew has tapped
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+# true if prefer to continue if any App is already installed without cask
+homebrew_cask_accept_external_apps: true
+
+# apps to be installed via cask
+homebrew_cask_apps:
+  - 1password
+  - alfred
+  - authy
+  - docker
+  - dropbox
+  - google-chrome
+  #- hazel
+  - iterm2
+  - itsycal
+  - slack
+  - spotify
+  - sublime-text
+  #- transmit
+  #- vagrant
