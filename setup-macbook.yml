@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  connection: local
-
-  vars_files:
-    - vars/brew.yml
-
-  roles:
-    - geerlingguy.homebrew
