@@ -9,6 +9,9 @@ homebrew_installed_packages:
   - git
   - readline
   - ssh-copy-id
+  - tmux
+  - nexeck/tmuxinator/tmuxinator
+  - tmuxinator-completion
   - openssl
   - wget
   - zsh
@@ -17,6 +20,7 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - nexeck/homebrew-tmuxinator
 
 # true if prefer to continue if any App is already installed without cask
 homebrew_cask_accept_external_apps: true
@@ -35,5 +39,4 @@ homebrew_cask_apps:
   - slack
   - spotify
   - sublime-text
-  #- transmit
   #- vagrant

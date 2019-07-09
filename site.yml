@@ -5,9 +5,9 @@
   vars_files:
     - vars/brew.yml
     - vars/dockutil.yml
+    - vars/dotfiles.yml
 
   roles:
-    - role: geerlingguy.homebrew
-      tags: ['homebrew']
-    - role: fubarhouse.macdock
-      tags: ['config']
+    - { role: geerlingguy.homebrew, tags: ['homebrew'] }
+    - { role: fubarhouse.macdock, tags: ['config'] }
+    - { role: geerlingguy.dotfiles, tags: ['dotfiles'] }

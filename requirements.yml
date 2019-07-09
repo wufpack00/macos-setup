@@ -1,2 +1,4 @@
 ---
 - src: geerlingguy.homebrew
+- src: fubarhouse.macdock
+- src: geerlingguy.dotfiles
