@@ -3,5 +3,5 @@
   roles:
     - { role: geerlingguy.homebrew, tags: ['homebrew'] }
     - { role: fubarhouse.macdock, tags: ['config', 'dock'] }
-    - { role: ansible-role-osx-defaults, tags: ['config', 'defaults'] }
+    - { role: wufpack00.ansible-role-osx-defaults, tags: ['config', 'defaults'] }
     - { role: geerlingguy.dotfiles, tags: ['dotfiles'] }
