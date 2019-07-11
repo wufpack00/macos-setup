@@ -28,8 +28,9 @@ Finder_AppleShowAllFiles: false                  # Show hidden files
 Finder_FXPreferredViewStyle: "Nlsv"              # View as (icnv:Icons, Nlsv:List, clmv:Column, Flwv:Cover Flow)
 Finder_FXPreferredGroupBy: "None"                # Arrange By (None, Name, Application Category, Date Last Opened, Date Added, Size, Finder Tags)
 Finder_ShowTabView: true                         # Show Tab Bar
-Finder_ShowPathbar: false                        # Show Path Bar
-Finder_ShowStatusBar: false                      # Show Status Bar
+Finder_ShowPathbar: true                         # Show Path Bar
+Finder_ShowStatusBar: true                      # Show Status Bar
 Finder_ShowSidebar: true                         # Show Side Bar
 Finder_ColumnShowIcons: true                     # Show Preview
 Finder_FXShowPosixPathInTitle: true            # Show full POSIX path as Finder window title
+Finder_QuitMenuItem: true                        # Show Quit Menu
