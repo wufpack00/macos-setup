@@ -1,4 +1,5 @@
 ---
 - src: geerlingguy.homebrew
 - src: fubarhouse.macdock
+- src: https://github.com/wufpack00/ansible-role-osx-defaults
 - src: geerlingguy.dotfiles

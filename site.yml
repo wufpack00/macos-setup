@@ -6,8 +6,10 @@
     - vars/brew.yml
     - vars/dockutil.yml
     - vars/dotfiles.yml
+    - vars/osx-defaults.yml
 
   roles:
     - { role: geerlingguy.homebrew, tags: ['homebrew'] }
-    - { role: fubarhouse.macdock, tags: ['config'] }
+    - { role: fubarhouse.macdock, tags: ['config', 'dock'] }
+    - { role: ansible-role-osx-defaults, tags: ['config', 'defaults'] }
     - { role: geerlingguy.dotfiles, tags: ['dotfiles'] }
