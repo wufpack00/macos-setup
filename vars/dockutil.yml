@@ -31,9 +31,24 @@ dockitems_enabled:
   - name: Safari
     path: "/Applications/Safari.app"
     pos: 6
+  - name: Mail
+    path: "/Applications/Mail.app"
+    pos: 7
+  - name: Contacts
+    path: "/Applications/Contacts.app"
+    pos: 8
+  - name: Calendar
+    path: "/Applications/Calendar.app"
+    pos: 9
+  - name: Notes
+    path: "/Applications/Notes.app"
+    pos: 10
+  - name: Reminders
+    path: "/Applications/Reminders.app"
+    pos: 11
   - name: Sublime
     path: "/Applications/Sublime Text.app"
-    pos: 7
+    pos: 12
   - name: Spotify
     path: /Applications/Spotify.app
-    pos: 8
+    pos: 13
