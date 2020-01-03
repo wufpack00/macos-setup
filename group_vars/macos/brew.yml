@@ -16,6 +16,8 @@ homebrew_installed_packages:
   - openssl
   - wget
   - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 # taps you would like to make sure Homebrew has tapped
 homebrew_taps:
@@ -37,6 +39,8 @@ homebrew_cask_apps:
   #- hazel
   - iterm2
   - itsycal
+  - { java, install_options: "no-quarantine" }
+  #- homebrew/cask-drivers/logitech-options
   - slack
   - spotify
   - sublime-text
