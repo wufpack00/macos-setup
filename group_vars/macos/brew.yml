@@ -2,6 +2,7 @@
 # packages installed via brew install
 homebrew_installed_packages:
   - bash-completion
+  - brew-gem
   - curl
   - dockutil
   - exiftool
@@ -9,6 +10,7 @@ homebrew_installed_packages:
   - git
   - molecule
   - readline
+  - ruby
   - ssh-copy-id
   - tmux
   - nexeck/tmuxinator/tmuxinator

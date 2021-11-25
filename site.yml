@@ -5,3 +5,11 @@
     - { role: fubarhouse.macdock, tags: ['config', 'dock'] }
     - { role: wufpack00.ansible-role-osx-defaults, tags: ['config', 'defaults'] }
     - { role: geerlingguy.dotfiles, tags: ['dotfiles'] }
+
+
+- post_tasks:
+    # Installs latest available version of rake.
+    - name: Install ruby gems
+      gem:
+        name: inifile
+        state: latest
