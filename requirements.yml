@@ -1,7 +1,7 @@
 ---
-- src: geerlingguy.homebrew
-- src: fubarhouse.macdock
-- src: https://github.com/wufpack00/ansible-role-osx-defaults
-  version: master
-  name: wufpack00.ansible-role-osx-defaults
-- src: geerlingguy.dotfiles
+roles:
+  - name: elliotweiser.osx-command-line-tools
+  - name: geerlingguy.dotfiles
+
+collections:
+  - name: geerlingguy.mac

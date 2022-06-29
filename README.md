@@ -8,5 +8,9 @@ It will then perform a git clone of this repository and execute master playbook 
 
 To execute the playbook directly:
 ```
-ansible-playbook site.yml --ask-become-pass --verbose
+ansible-playbook site.yml --ask-become-pass -v
 ```
+
+sudo pip3 install --upgrade pip
+pip install ansible
+ansible-galaxy install --force  -r requirements.yml

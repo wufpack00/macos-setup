@@ -1,15 +1,16 @@
 ---
 - hosts: macos
   roles:
-    - { role: geerlingguy.homebrew, tags: ['homebrew'] }
-    - { role: fubarhouse.macdock, tags: ['config', 'dock'] }
-    - { role: wufpack00.ansible-role-osx-defaults, tags: ['config', 'defaults'] }
-    - { role: geerlingguy.dotfiles, tags: ['dotfiles'] }
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
+    - role: geerlingguy.mac.mas
+      when: mas_installed_apps or mas_installed_app_ids
+      tags: ['mas']
+    - role: geerlingguy.mac.dock
+      when: configure_dock
+      tags: ['dock']
 
-
-- post_tasks:
-    # Installs latest available version of rake.
-    - name: Install ruby gems
-      gem:
-        name: inifile
-        state: latest

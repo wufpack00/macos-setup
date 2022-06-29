@@ -24,12 +24,20 @@ function install-xcode-cli() {
   fi
 }
 
+function install-rosetta() {
+  echo "==========================================="
+  echo "Installing Rosetta"
+  echo "==========================================="
+  /usr/sbin/softwareupdate --install-rosetta
+}
+
 function install-pip() {
   echo "==========================================="
   echo "Installing pip"
   echo "==========================================="
 
-  sudo easy_install pip
+  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  python3 get-pip.py
 
   pip --version
 }
@@ -39,7 +47,7 @@ function install-ansible() {
   echo "Installing Ansible"
   echo "==========================================="
 
-  sudo pip install ansible --quiet
+  sudo pip3 install --ignore-installed ansible
 
   ansible --version
 }
@@ -67,7 +75,7 @@ function execute-playbook() {
   echo "==========================================="
 
   ansible-galaxy install -r requirements.yml
-  ansible-playbook --ask-become-pass setup-macbook.yml --verbose
+  ansible-playbook --ask-become-pass site.yml --verbose
 }
 
 function cleanup() {
