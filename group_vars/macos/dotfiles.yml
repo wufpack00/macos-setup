@@ -9,7 +9,7 @@ dotfiles_files:
   - .inputrc
   - .osx
   - .vimrc
-  
+
 # The git repository and branch/tag/commit hash to use for retrieving dotfiles. Dotfiles should generally be laid out within the root directory of the repository.
 dotfiles_repo: "https://github.com/wufpack00/dotfiles.git"
 dotfiles_repo_version: master
