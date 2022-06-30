@@ -1,0 +1,28 @@
+---
+- name: Get the path to ZSH
+  become: false
+  local_action: command which zsh
+  register: zsh_path
+
+- name: "Ensure homebrew zsh is in allowed shells"
+  lineinfile:
+    path: /etc/shells
+    line: "{{ zsh_path.stdout }}"
+  become: true
+
+- name: Install Oh My ZSH
+  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  args:
+    creates: "/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh"
+
+- name: Set ZSH as the default shell
+  shell: chsh -s $(which zsh) {{ lookup('env', 'USER') }}
+  become: true
+
+- name: "Create a default ZSH configuration"
+  template:
+    src: templates/.zshrc.j2
+    dest: /Users/{{ lookup('env', 'USER') }}/.zshrc
+    owner: "{{ lookup('env', 'USER') }}"
+    force: true
+    backup: true

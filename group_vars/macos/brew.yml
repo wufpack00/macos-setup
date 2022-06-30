@@ -3,17 +3,13 @@
 
 # packages installed via brew install
 homebrew_installed_packages:
-  - bash-completion
-  - brew-gem
-  - curl
-  - exiftool
-  - gettext
+  - bat
   - git
-  - github/gh/gh
+  # - go-task
+  - k9s
   - powerlevel10k
-  - readline
-  - ssh-copy-id
   - openssl
+  - tree
   - wget
   - zsh
   - zsh-autosuggestions
@@ -21,9 +17,7 @@ homebrew_installed_packages:
 
 # packages to be uninstalled
 homebrew_uninstalled_packages:
-  - tmuxinator
-  - tmuxinator-completion
-  - tmux
+  - argocd-autopilot
 
 # upgrade brew and all its packages
 homebrew_upgrade_all_packages: false
@@ -40,16 +34,23 @@ homebrew_cask_appdir: /Applications
 
 # apps to be installed via cask
 homebrew_cask_apps:
+  - 1password
   - alfred
-  - authy
+  - bartender
   - docker
-  - dropbox
-  - firefox
+  # - dropbox
+  # - firefox
   - google-chrome
-  #- hazel
+  # - hazel
   - iterm2
   - itsycal
+  # - lens
+  - logitech-options
+  - notion
   - slack
-  - spotify
-  - sublime-text
+  # - spotify
+  - vagrant
+  - virtualbox
   - visual-studio-code
+  - vnc-viewer
+  - zoom
