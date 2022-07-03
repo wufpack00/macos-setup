@@ -38,7 +38,7 @@ homebrew_cask_apps:
   - 1password
   - alfred
   - bartender
-  - docker
+  # - docker
   # - dropbox
   # - firefox
   - google-chrome
