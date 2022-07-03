@@ -88,7 +88,7 @@ function upgrade-pip() {
     python3 "${INSTALL_DIR}/get-pip.py"
   fi
   # upgrade
-  sudo python3 -m pip install --upgrade pip
+  python3 -m pip install --upgrade pip
 }
 
 # https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv
@@ -105,7 +105,9 @@ function install-ansible() {
   echo "Installing Ansible"
   echo "==========================================="
 
-  #sudo pip3 install --ignore-installed ansible
+  # upgrade venv version of pip
+  python3 -m pip install --upgrade pip
+  
   python3 -m pip install ansible
 
   ansible --version
