@@ -27,6 +27,7 @@ homebrew_taps:
   - homebrew/core
   - homebrew/cask
   - homebrew/cask-drivers # required for logitech-options
+  - romkatv/powerlevel10k # required for powerlevel10k
 
 # true if prefer to continue if any App is already installed without cask
 homebrew_cask_accept_external_apps: true
