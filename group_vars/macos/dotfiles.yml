@@ -1,8 +1,8 @@
-configure_dotfiles: false
+configure_dotfiles: true
 
 # The git repository and branch/tag/commit hash to use for retrieving dotfiles. Dotfiles should generally be laid out within the root directory of the repository.
 dotfiles_repo: "https://github.com/wufpack00/dotfiles.git"
-dotfiles_repo_version: master
+dotfiles_repo_version: minimal
 
 #Add the hostkey for the repo url if not already added. If ssh_opts contains "-o StrictHostKeyChecking=no", this parameter is ignored.
 dotfiles_repo_accept_hostkey: false
@@ -15,10 +15,7 @@ dotfiles_home: "~"
 
 #Which files from the dotfiles repository should be linked to the dotfiles_home
 dotfiles_files:
-  - .bash_profile
-  - .bashrc
+  - .zshrc
+  - .zshrc.personal.before
+  - .zshrc.personal.after
   - .gitconfig
-  - .direnvrc
-  - .vimrc
-  - .tmux.conf
-  #- .aws
