@@ -6,7 +6,7 @@ homebrew_installed_packages:
   - bat
   - git
   # - go-task
-  - k9s
+  # - k9s
   - powerlevel10k
   - openssl
   - tree
@@ -17,7 +17,7 @@ homebrew_installed_packages:
 
 # packages to be uninstalled
 homebrew_uninstalled_packages:
-  - argocd-autopilot
+  - vagrant
 
 # upgrade brew and all its packages
 homebrew_upgrade_all_packages: false
@@ -26,6 +26,7 @@ homebrew_upgrade_all_packages: false
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-drivers # required for logitech-options
 
 # true if prefer to continue if any App is already installed without cask
 homebrew_cask_accept_external_apps: true
@@ -49,8 +50,8 @@ homebrew_cask_apps:
   - notion
   - slack
   # - spotify
-  - vagrant
-  - virtualbox
+  # - vagrant
+  # - virtualbox
   - visual-studio-code
   - vnc-viewer
   - zoom
