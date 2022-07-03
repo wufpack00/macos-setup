@@ -88,7 +88,7 @@ function upgrade-pip() {
     python3 "${INSTALL_DIR}/get-pip.py"
   fi
   # upgrade
-  python3 -m pip install --upgrade pip
+  sudo python3 -m pip install --upgrade pip
 }
 
 # https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv
