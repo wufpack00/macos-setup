@@ -11,27 +11,84 @@ fi
 readonly GIT_REPO="https://github.com/wufpack00/macos-setup.git"
 readonly INSTALL_DIR="/tmp/setupmac-$RANDOM"
 
+function create-workdir() {
+  echo "==========================================="
+  echo "Creating work dir"
+  echo "==========================================="
+  mkdir "$INSTALL_DIR"
+  echo "Directory ${INSTALL_DIR} successfully created"
+}
+
 function install-xcode-cli() {
-  local installPath=$(xcode-select -p)
+  echo "==========================================="
+  echo "Installing Apple's command line tools"
+  echo "==========================================="
+
+  local installPath
+  installPath=$(xcode-select -p)
 
   if [ -d "$installPath" ] ; then
     echo "Command line tools installed at $installPath"
   else
-    echo "==========================================="
-    echo "Installing Apple's command line tools"
-    echo "==========================================="
     xcode-select --install
   fi
 }
 
-function install-pip() {
+function install-rosetta() {
   echo "==========================================="
-  echo "Installing pip"
+  echo "Installing Rosetta"
   echo "==========================================="
 
-  sudo easy_install pip
+  # save existing state
+  OLDIFS=$IFS
+  IFS='.' read osvers_major osvers_minor osvers_dot_version <<< "$(/usr/bin/sw_vers -productVersion)"
 
-  pip --version
+  # restore IFS to previous state
+  IFS=$OLDIFS
+
+  # M1 was first supported in macOS 11
+  if [[ ${osvers_major} -ge 11 ]]; then
+
+    # Is this an Apple or Intel processor?
+    processor=$(/usr/sbin/sysctl -n machdep.cpu.brand_string | grep -o "Intel")
+
+    if [[ -n "$processor" ]]; then
+      echo "$processor processor installed. No need to install Rosetta."
+    else
+       # perform non-interactive install if not already installed
+      if /usr/bin/pgrep oahd >/dev/null 2>&1; then
+          echo "Rosetta is installed and running."
+      else
+        /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+      fi
+    fi
+    else
+      echo "Mac is running macOS $osvers_major.$osvers_minor.$osvers_dot_version."
+      echo "No need to install Rosetta on this version of macOS."
+  fi
+}
+
+function upgrade-pip() {
+  echo "==========================================="
+  echo "Upgrading pip"
+  echo "==========================================="
+
+  # should already be installed as part of python
+  if [[ ! $(python3 -m pip) ]] ; then
+    curl https://bootstrap.pypa.io/get-pip.py -o "${INSTALL_DIR}/get-pip.py"
+    python3 "${INSTALL_DIR}/get-pip.py"
+  fi
+  # upgrade
+  python3 -m pip install --upgrade pip
+}
+
+# https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv
+function create-virtualenv() {
+  echo "==========================================="
+  echo "Creating virtual environment"
+  echo "==========================================="
+  cd "$INSTALL_DIR"
+  python3 -m venv .venv && source .venv/bin/activate
 }
 
 function install-ansible() {
@@ -39,7 +96,8 @@ function install-ansible() {
   echo "Installing Ansible"
   echo "==========================================="
 
-  sudo pip install ansible --quiet
+  #sudo pip3 install --ignore-installed ansible
+  python3 -m pip install ansible
 
   ansible --version
 }
@@ -57,7 +115,7 @@ function clone-repo() {
       echo "git cloned failed"
       exit 1
   else
-      cd "$INSTALL_DIR" 
+      cd "$INSTALL_DIR"
   fi
 }
 
@@ -67,7 +125,7 @@ function execute-playbook() {
   echo "==========================================="
 
   ansible-galaxy install -r requirements.yml
-  ansible-playbook --ask-become-pass setup-macbook.yml --verbose
+  ansible-playbook --ask-become-pass main.yml -vvv
 }
 
 function cleanup() {
@@ -75,16 +133,21 @@ function cleanup() {
   echo "Removing $INSTALL_DIR"
   echo "==========================================="
 
-  rm -Rfv "$INSTALL_DIR"
+  rm -Rf "$INSTALL_DIR"
 }
 
+trap cleanup EXIT
+
 function main() {
-  install-xcode-cli
-  install-pip
-  install-ansible
+  create-workdir
   clone-repo
+  install-xcode-cli
+  install-rosetta
+  upgrade-pip
+  create-virtualenv
+  install-ansible
   execute-playbook
-  cleanup
+  #cleanup happens automatically due to exit trap
 
   echo "Done."
   exit 0

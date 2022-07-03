@@ -1,3 +1,15 @@
+configure_dock: false
+
+dockitems_remove: []
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
+#   pos: 5
+
 dockitems_disabled:
   - Siri
   - Launchpad
