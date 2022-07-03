@@ -81,7 +81,7 @@ function upgrade-pip() {
   echo "==========================================="
   echo "Upgrading pip"
   echo "==========================================="
-
+  export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
   # should already be installed as part of python
   if [[ ! $(python3 -m pip) ]] ; then
     curl https://bootstrap.pypa.io/get-pip.py -o "${INSTALL_DIR}/get-pip.py"
