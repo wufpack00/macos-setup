@@ -1,5 +1,11 @@
 ---
 - hosts: macos
+  pre_tasks:
+    - name: Create project directory if it does not exist
+      ansible.builtin.file:
+        path: /Users/carey/git-checkouts
+        state: directory
+        mode: '0755'
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
@@ -14,11 +20,6 @@
     #   when: configure_dock
     #   tags: ['dock']
   tasks:
-    - name: Create project directory if it does not exist
-      ansible.builtin.file:
-        path: /Users/carey/git-checkouts
-        state: directory
-        mode: '0755'
     - import_tasks: tasks/omzsh.yml
       when: configure_ohmyzsh
       tags: ['ohmyzsh']
