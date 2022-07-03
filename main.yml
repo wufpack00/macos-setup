@@ -14,6 +14,11 @@
     #   when: configure_dock
     #   tags: ['dock']
   tasks:
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ git_work_dir }}"
+        state: directory
+        mode: '0755'
     - import_tasks: tasks/omzsh.yml
       when: configure_ohmyzsh
       tags: ['ohmyzsh']
