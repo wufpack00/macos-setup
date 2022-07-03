@@ -14,9 +14,9 @@
     #   when: configure_dock
     #   tags: ['dock']
   tasks:
-    - name: Create a directory if it does not exist
+    - name: Create project directory if it does not exist
       ansible.builtin.file:
-        path: "{{ git_work_dir }}"
+        path: /Users/carey/git-checkouts
         state: directory
         mode: '0755'
     - import_tasks: tasks/omzsh.yml
