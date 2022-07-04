@@ -136,7 +136,7 @@ function execute-playbook() {
   echo "==========================================="
 
   ansible-galaxy install -r requirements.yml
-  ansible-playbook --ask-become-pass main.yml -vvv
+  ansible-playbook --ask-become-pass main.yml -v
 }
 
 function cleanup() {

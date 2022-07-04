@@ -15,7 +15,8 @@ dotfiles_home: "~"
 
 #Which files from the dotfiles repository should be linked to the dotfiles_home
 dotfiles_files:
+  - .gitconfig
   - .zshrc
   - .zshrc.personal.before
   - .zshrc.personal.after
-  - .gitconfig
+  - .vimrc

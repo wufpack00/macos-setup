@@ -16,8 +16,7 @@ homebrew_installed_packages:
   - zsh-syntax-highlighting
 
 # packages to be uninstalled
-homebrew_uninstalled_packages:
-  - vagrant
+homebrew_uninstalled_packages: []
 
 # upgrade brew and all its packages
 homebrew_upgrade_all_packages: false
@@ -56,3 +55,5 @@ homebrew_cask_apps:
   - visual-studio-code
   - vnc-viewer
   - zoom
+
+homebrew_cask_uninstalled_apps: []

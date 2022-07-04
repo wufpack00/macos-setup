@@ -18,3 +18,26 @@
 - name: Set ZSH as the default shell
   shell: chsh -s $(which zsh) {{ lookup('env', 'USER') }}
   become: true
+
+- name: Remove .zshrc file created by install script
+  file:
+    path: "{{ dotfiles_home }}/.zshrc"
+    state: absent
+
+- name: Create symlink to custom .zshrc
+  file:
+    src: "{{ dotfiles_repo_local_destination }}/.zshrc"
+    dest: "{{ dotfiles_home }}/.zshrc"
+    state: link
+    mode: 0644
+  become: false
+
+- name: Cloning zsh-autosuggestions plugin
+  git:
+    repo=https://github.com/zsh-users/zsh-autosuggestions
+    dest="/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+
+- name: Cloning zsh-syntax-highlighting plugin
+  git:
+    repo=https://github.com/zsh-users/zsh-syntax-highlighting
+    dest="/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"

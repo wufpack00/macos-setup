@@ -1,0 +1,6 @@
+---
+# https://draculatheme.com/iterm
+- name: Cloning dracula iterm theme
+  git:
+    repo=https://github.com/dracula/iterm.git
+    dest="/Users/{{ lookup('env', 'USER') }}/.dracula-iterm"

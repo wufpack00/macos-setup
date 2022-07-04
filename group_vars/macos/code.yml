@@ -1,0 +1,7 @@
+---
+configure_vscode: true
+
+vscode_extensions:
+  - dracula-theme.theme-dracula
+  - Tyriar.sort-lines
+  - wholroyd.jinja
