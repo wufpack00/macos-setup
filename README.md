@@ -21,7 +21,13 @@ ansible-playbook main.yml --ask-become-pass -v
 Steps done manually:
  * First run of iTerm/zsh will configure [powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt
  * Import [Dracula iTerm theme](https://draculatheme.com/iterm): Preferences > Profiles > Colors > Color Presets ...
+ * Alfred workflow -  1Password 
+
+ Steps to do:
  * Activate [Dracula Slack theme](https://draculatheme.com/slack)
+ * .ssh/config file
+ * Disable spotlight search / Enable Alfred search
+ * Dock - remove recent items
 
 
  References:

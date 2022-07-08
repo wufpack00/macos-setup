@@ -1,66 +1,50 @@
 configure_dock: false
 
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
-
-dockitems_disabled:
-  - Siri
-  - Launchpad
-  - Maps
-  - Photos
-  - Messages
-  - FaceTime
-  - Pages
-  - Numbers
-  - Keynote
-  - News
-  - iTunes
-  - iBooks
-
-dockitems_enabled:
-  - name: App Store
-    path: "/Applications/App Store.app"
-    pos: 1
-  - name: System Preferences
-    path: "/Applications/System Preferences.app"
-    pos: 2
-  - name: Preview
-    path: "/Applications/Preview.app"
-    pos: 3
-  - name: iTerm
+dock_dockitems_erase_all: false
+dock_dockitems:
+  - label: System Preferences
+    action: add
+    path: "/System/Applications/System Preferences.app"
+    position: 2
+  - label: Preview
+    action: add
+    path: "/System/Applications/Preview.app"
+    position: 3
+  - label: iTerm
+    action: add
     path: /Applications/iTerm.app
-    pos: 4
-  - name: Authy
-    path: "/Applications/Authy Desktop.app"
-    pos: 5
-  - name: Safari
-    path: "/Applications/Safari.app"
-    pos: 6
-  - name: Mail
-    path: "/Applications/Mail.app"
-    pos: 7
-  - name: Contacts
-    path: "/Applications/Contacts.app"
-    pos: 8
-  - name: Calendar
-    path: "/Applications/Calendar.app"
-    pos: 9
-  - name: Notes
-    path: "/Applications/Notes.app"
-    pos: 10
-  - name: Reminders
-    path: "/Applications/Reminders.app"
-    pos: 11
-  - name: Sublime
-    path: "/Applications/Sublime Text.app"
-    pos: 12
-  - name: Spotify
-    path: /Applications/Spotify.app
-    pos: 13
+    position: 4
+  - label: Safari
+    action: add
+    path: "/System/Applications/Safari.app"
+    position: 6
+  - label: Mail
+    action: add
+    path: "/System/Applications/Mail.app"
+    position: 7
+  - label: Contacts
+    action: add
+    path: "/System/Applications/Contacts.app"
+    position: 8
+  - label: Calendar
+    action: add
+    path: "/System/Applications/Calendar.app"
+    position: 9
+  - label: Notes
+    action: add
+    path: "/System/Applications/Notes.app"
+    position: 10
+  - label: Reminders
+    action: add
+    path: "/System/Applications/Reminders.app"
+    position: 11
+  - label: 'Visual Studio Code'
+    action: add
+    path: "/Applications/Visual Studio Code.app"
+    position: 12
+  - label: Downloads
+    action: add
+    path: ~/Downloads
+    view: automatic
+    display: folder
+    position: 12

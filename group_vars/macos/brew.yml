@@ -3,6 +3,7 @@
 
 # packages installed via brew install
 homebrew_installed_packages:
+  - 1password-cli
   - bat
   - git
   # - go-task

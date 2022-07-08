@@ -1,36 +1,49 @@
 ---
-Dock_Enabled: true                              # Enable Dock configuration
+Configure_Dock: true                              # Enable Dock configuration
 Dock_TileSize: 50                                # Dock size
 Dock_Magnification: false                         # Dock magnification
 Dock_LargeSize: 128                              # Icon size of magnified Dock items
 Dock_Orientation: "bottom"                       # Dock orientation: left, bottom, right
 Dock_MinEffect: "genie"                          # Minimization effect: genie, scale, suck
-Dock_AppleActionOnDoubleClick: "Minimize"        # Double-click a window's title title bar to: None, Minimize, Maximize
+Dock_AppleActionOnDoubleClick: "Minimize"        # Double-click a window's title title bar to: falsene, Minimize, Maximize
 Dock_MinimizeToApplication: true                # Minimize windows appliction into icon (true, false)
 Dock_LaunchAnim: true                            # Animate opening applications
 Dock_Autohide: false                             # Automatically hide and show the Dock
-Dock_ShowProcessIndicators: true                 # Show indicator for open applications
-Dock_ShowRecentApps: false                       # Show recent applications in Dock
-Dock_ShowHidden: false                           # Display translucent Dock icons for hidden applications
+Dock_AutohideTimeModifier: 0                     # 0 - Disable, other Int value - Define Animation timing when hiding/showing the Dock
+Dock_ShowProcessIndicators: true                  # Show indicator for open applications
+Dock_ShowHidden: false                              # Display translucent Dock icons for hidden applications
+Dock_MouseOverHiliteStack: true                   # Enable highlight hover effect for the grid view of a stack (Dock)
 
 Finder_Enabled: true                            # Enable Finder configuration
-Finder_ShowHardDrivesOnDesktop: false            # Show hard drives on the desktop
-Finder_ShowExternalHardDrivesOnDesktop: true     # Show external hard drives on the desktop
-Finder_ShowRemovableMediaOnDesktop: true         # Show CDs,DVDs and iPods on the desktop
-Finder_ShowMountedServersOnDesktop: false        # Show connected servers on the desktop
-Finder_NewWindowTarget: "PfDo"                   # New Finder windows shows (PfCm:Computer, PfVo:Computer's HD, PfHm:Home, PfDe:Desktop, PfDo:Documents, PfAF:All My files )
-Finder_FinderSpawnTab: true                      # Open folders in tabs instead of new windows
-Finder_AppleShowAllExtensions: true              # Show all fiename extensions
-Finder_FXEnableExtensionChangeWarning: true      # Show warning before changing an extension
-Finder_WarnOnEmptyTrash: false                   # Show warning before emptying the trash
+Finder_ShowHardDrivesOnDesktop: false               # Show hard drives on the desktop
+Finder_ShowExternalHardDrivesOnDesktop: true      # Show external hard drives on the desktop
+Finder_ShowRemovableMediaOnDesktop: true          # Show CDs,DVDs and iPods on the desktop
+Finder_ShowMountedServersOnDesktop: false           # Show connected servers on the desktop
+Finder_NewWindowTarget: "All My Files"           # New Finder windows shows ("Computer", "Computer's HD", "Home", "Desktop", "Documents", "All My Files" )
+Finder_FinderSpawnTab: true                       # Open folders in tabs instead of new windows
+Finder_AppleShowAllExtensions: true                # Show all filename extensions
+Finder_FXEnableExtensionChangeWarning: true       # Show warning before changing an extension
+Finder_WarnOnEmptyTrash: false                      # Show warning before emptying the trash
 Finder_FXDefaultSearchScope: "SCev"              # When performing a search (SCev:Search This Mac, SCcf:Search the Current Folder, SCsp:Use the Previous Search Scope)
-Finder_AppleShowAllFiles: true                  # Show hidden files
+Finder_AppleShowAllFiles: true                     # Show hidden files
 Finder_FXPreferredViewStyle: "Nlsv"              # View as (icnv:Icons, Nlsv:List, clmv:Column, Flwv:Cover Flow)
 Finder_FXPreferredGroupBy: "None"                # Arrange By (None, Name, Application Category, Date Last Opened, Date Added, Size, Finder Tags)
-Finder_ShowTabView: true                         # Show Tab Bar
-Finder_ShowPathbar: true                         # Show Path Bar
-Finder_ShowStatusBar: true                      # Show Status Bar
-Finder_ShowSidebar: true                         # Show Side Bar
-Finder_ColumnShowIcons: true                     # Show Preview
-Finder_FXShowPosixPathInTitle: true            # Show full POSIX path as Finder window title
-Finder_QuitMenuItem: true                        # Show Quit Menu
+Finder_ShowTabView: true                          # Show Tab Bar
+Finder_ShowPathbar: true                           # Show Path Bar
+Finder_ShowStatusBar: false                         # Show Status Bar
+Finder_ShowSidebar: true                          # Show Side Bar
+Finder_ColumnShowIcons: true                      # Show Preview
+Finder_FXShowPosixPathInTitle: false                # Show full POSIX path as Finder window title
+Finder_QuitMenuItem: false                          # Allow quitting via ⌘ + Q
+Finder_QLEnableTextSelection: false                 # Select and Copy Text from Quick Look
+Finder_DSDontWriteNetworkStores: true              # if set to 'yes' prevents .DS_Store files to be written on network devices
+Finder_DSDontWriteUSBStores: true                  # if set to 'yes' prevents .DS_Store files to be written on USB devices
+Finder_DVSIVSarrangeBy: grid                     # Desktop, Enable snap-to-grid for icons on the desktop and in other icon views
+Finder_DVSIVSiconSize: 64                        # Desktop, Set the size of icons on the desktop and in other icon views
+Finder_DVSIVSshowItemInfo: false                    # Desktop, Show item info near icons on the desktop and in other icon views
+Finder_DVSIVSgridSpacing: 54                     # Desktop, Increase grid spacing for icons on the desktop and in other icon views
+Finder_DVSIVSlabelOnBottom: true                  # Desktop, Show item info to the right of the icons on the desktop
+Finder_SVSIVSarrangeBy: grid                     # Standard, Enable snap-to-grid for icons on the desktop and in other icon views
+Finder_SVSIVSiconSize: 64                        # Standard, Set the size of icons on the desktop and in other icon views
+Finder_SVSIVSshowItemInfo: false                    # Standard, Show item info near icons on the desktop and in other icon views
+Finder_SVSIVSgridSpacing: 54                     # Standard, Increase grid spacing for icons on the desktop and in other icon views
