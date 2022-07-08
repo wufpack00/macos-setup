@@ -25,9 +25,9 @@
     - import_tasks: tasks/omzsh.yml
       when: configure_ohmyzsh
       tags: ['omzsh']
-    - import_tasks: tasks/iterm.yml
+    - import_tasks: tasks/dracula.yml
       when: configure_ohmyzsh
-      tags: ['omzsh']
+      tags: ['dracula']
     - import_tasks: tasks/vscode.yml
       when: configure_vscode
       tags: ['code']

@@ -22,12 +22,16 @@ Steps done manually:
  * First run of iTerm/zsh will configure [powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt
  * Import [Dracula iTerm theme](https://draculatheme.com/iterm): Preferences > Profiles > Colors > Color Presets ...
  * Alfred workflow -  1Password 
+ * Double-click Alfred Dracula theme to activate
 
  Steps to do:
  * Activate [Dracula Slack theme](https://draculatheme.com/slack)
- * .ssh/config file
+ * template files
+ ** .ssh/config file
+ ** .sh.local
+ ** .gitconfig.local
  * Disable spotlight search / Enable Alfred search
- * Dock - remove recent items
+ 
 
 
  References:
