@@ -3,9 +3,9 @@
 - name: Cloning dracula iterm theme
   git:
     repo=https://github.com/dracula/iterm.git
-    dest="/Users/{{ lookup('env', 'USER') }}/git-checkouts/dracula/iterm"
+    dest="{{ project_dir }}/dracula-theme/iterm"
 
 - name: Cloning dracula alfred theme
   git:
     repo=https://github.com/dracula/alfred.git
-    dest="/Users/{{ lookup('env', 'USER') }}/git-checkouts/dracula/alfred"
+    dest="{{ project_dir }}/dracula-theme/alfred"

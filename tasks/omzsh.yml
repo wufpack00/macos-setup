@@ -13,7 +13,7 @@
 - name: Install Oh My ZSH
   shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   args:
-    creates: "/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh"
+    creates: "{{ omzsh_install_dir }}"
 
 - name: Set ZSH as the default shell
   shell: chsh -s $(which zsh) {{ lookup('env', 'USER') }}
@@ -35,9 +35,9 @@
 - name: Cloning zsh-autosuggestions plugin
   git:
     repo=https://github.com/zsh-users/zsh-autosuggestions
-    dest="/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    dest="{{ omzsh_plugin_dir }}/zsh-autosuggestions"
 
 - name: Cloning zsh-syntax-highlighting plugin
   git:
     repo=https://github.com/zsh-users/zsh-syntax-highlighting
-    dest="/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    dest="{{ omzsh_plugin_dir }}/zsh-syntax-highlighting"

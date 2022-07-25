@@ -11,6 +11,7 @@ It will then perform a git clone of this repository and execute an Ansible playb
 - Clone my dotfiles and create symlinks to set them up
 - Set up Oh My ZSH config
 - Set up VSCode config
+- Download Alfred workflows
 
 To execute the playbook directly:
 

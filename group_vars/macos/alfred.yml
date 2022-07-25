@@ -1,0 +1,6 @@
+---
+configure_alfred: true
+
+alfred_workflows:
+  - https://github.com/alfredapp/1password-workflow/releases/latest/download/1Password.alfredworkflow
+  - https://github.com/vookimedlo/alfred-various-screenshots/releases/download/v2019_04_09/VariousScreenshots.alfredworkflow

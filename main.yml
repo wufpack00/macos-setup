@@ -3,7 +3,7 @@
   pre_tasks:
     - name: Create project directory if it does not exist
       ansible.builtin.file:
-        path: /Users/{{ lookup('env', 'USER') }}/git-checkouts
+        path: "{{ project_dir }}"
         state: directory
         mode: '0755'
   roles:
@@ -31,4 +31,7 @@
     - import_tasks: tasks/vscode.yml
       when: configure_vscode
       tags: ['code']
+    - import_tasks: tasks/alfred.yml
+      when: configure_alfred
+      tags: ['alfred']
 

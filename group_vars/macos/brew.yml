@@ -9,6 +9,7 @@ homebrew_installed_packages:
   # - go-task
   # - k9s
   - powerlevel10k
+  # - pre-commit
   - openssl
   - tree
   - wget
@@ -43,6 +44,7 @@ homebrew_cask_apps:
   # - dropbox
   # - firefox
   - google-chrome
+  - google-drive
   # - hazel
   - iterm2
   - itsycal

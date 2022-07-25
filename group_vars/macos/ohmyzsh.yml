@@ -1,2 +1,5 @@
 ---
 configure_ohmyzsh: true
+
+omzsh_install_dir: "{{ user_home_dir }}/.oh-my-zsh"
+omzsh_plugin_dir: "{{ omzsh_install_dir }}/custom/plugins"
