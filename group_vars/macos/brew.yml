@@ -3,7 +3,6 @@
 
 # packages installed via brew install
 homebrew_installed_packages:
-  - 1password-cli
   - bat
   - git
   # - go-task
@@ -38,6 +37,7 @@ homebrew_cask_appdir: /Applications
 # apps to be installed via cask
 homebrew_cask_apps:
   - 1password
+  - 1password-cli
   - alfred
   - bartender
   # - docker
@@ -45,6 +45,7 @@ homebrew_cask_apps:
   # - firefox
   - google-chrome
   - google-drive
+  - figma
   # - hazel
   - iterm2
   - itsycal
