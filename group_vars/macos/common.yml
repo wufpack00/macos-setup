@@ -1,5 +1,3 @@
 ---
 user_home_dir: /Users/{{ lookup('env', 'USER') }}
 project_dir: "{{ user_home_dir }}/git-checkouts"
-download_dir: "{{ user_home_dir }}/Downloads"
-alfred_download_dir: "{{ download_dir }}/Alfred"

@@ -1,0 +1,13 @@
+---
+- name: Create KeyBindings directory if it doesn't exist
+  ansible.builtin.file:
+    path: "{{ user_home_dir }}/Library/KeyBindings"
+    state: directory
+    mode: '0755'
+
+- name: Add custom key bindings
+  ansible.builtin.copy:
+    src: DefaultKeyBinding.dict
+    dest: "{{ user_home_dir }}/Library/KeyBindings"
+    owner: "{{ lookup('env', 'USER') }}"
+    force: yes
