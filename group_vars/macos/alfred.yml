@@ -1,6 +1,10 @@
 ---
 configure_alfred: true
 
+alfred_workflow_download_dir: "{{ user_home_dir }}/Downloads/Alfred"
+
 alfred_workflows:
   - https://github.com/alfredapp/1password-workflow/releases/latest/download/1Password.alfredworkflow
   - https://github.com/vookimedlo/alfred-various-screenshots/releases/download/v2019_04_09/VariousScreenshots.alfredworkflow
+  # - https://github.com/deanishe/alfred-convert/releases/download/v3.7.1/Convert-3.7.1.alfred4workflow
+  - https://github.com/giovannicoppola/alfred-convert/releases/download/v3.99/Convert_3-99.alfredworkflow

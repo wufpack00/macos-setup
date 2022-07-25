@@ -1,12 +1,12 @@
 ---
-- name: "Ensure {{ alfred_download_dir }} exists"
+- name: "Ensure {{ alfred_workflow_download_dir }} exists"
   ansible.builtin.file:
-    path: "{{ alfred_download_dir }}"
+    path: "{{ alfred_workflow_download_dir }}"
     state: directory
     mode: '0755'
 
-- name: "Download Alfred workflows to {{ alfred_download_dir }}"
+- name: "Download Alfred workflows to {{ alfred_workflow_download_dir }}"
   ansible.builtin.get_url:
     url: "{{ item }}"
-    dest: "{{ alfred_download_dir }}"
+    dest: "{{ alfred_workflow_download_dir }}"
   with_items: "{{ alfred_workflows }}"
