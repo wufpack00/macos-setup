@@ -1,8 +1,8 @@
 ---
 - name: Create a default VSCode configuration
-  template:
-    src: templates/vscode-settings.json.j2
-    dest: "{{ user_home_dir }}Library/Application Support/Code/User/settings.json"
+  ansible.builtin.copy:
+    src: vscode-settings.json
+    dest: "{{ user_home_dir }}/Library/Application Support/Code/User/settings.json"
     owner: "{{ lookup('env', 'USER') }}"
     force: yes
 
