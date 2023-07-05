@@ -32,12 +32,8 @@
     mode: 0644
   become: false
 
-- name: Cloning zsh-autosuggestions plugin
+- name: Clone custom plugins
   git:
-    repo=https://github.com/zsh-users/zsh-autosuggestions
-    dest="{{ omzsh_plugin_dir }}/zsh-autosuggestions"
-
-- name: Cloning zsh-syntax-highlighting plugin
-  git:
-    repo=https://github.com/zsh-users/zsh-syntax-highlighting
-    dest="{{ omzsh_plugin_dir }}/zsh-syntax-highlighting"
+    repo: "{{ item }}"
+    dest: "{{ omzsh_plugin_dir }}/{{ item | urlsplit('path') | basename }}"
+  with_items: "{{ omzsh_custom_plugins }}"

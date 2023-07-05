@@ -1,2 +1,3 @@
 [macos]
-127.0.0.1  ansible_connection=local
+lodestone.local ansible_host=127.0.0.1 ansible_connection=local
+agilebitsmbp.local ansible_host=127.0.0.1 ansible_connection=local

@@ -3,5 +3,9 @@ configure_vscode: true
 
 vscode_extensions:
   - dracula-theme.theme-dracula
+  - eamodio.gitlens
+  - GitLab.gitlab-workflow
+  - HashiCorp.terraform
+  - ms-azuretools.vscode-docker
   - Tyriar.sort-lines
   - wholroyd.jinja

@@ -3,3 +3,6 @@ configure_ohmyzsh: true
 
 omzsh_install_dir: "{{ user_home_dir }}/.oh-my-zsh"
 omzsh_plugin_dir: "{{ omzsh_install_dir }}/custom/plugins"
+omzsh_custom_plugins:
+  - https://github.com/zsh-users/zsh-autosuggestions
+  - https://github.com/zsh-users/zsh-syntax-highlighting

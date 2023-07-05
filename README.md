@@ -16,18 +16,24 @@ It will then perform a git clone of this repository and execute an Ansible playb
 To execute the playbook directly:
 
 ```bash
-ansible-playbook main.yml --ask-become-pass -v
+# Prompt for password (when 1password-cli is not installed)
+ansible-playbook -K main.yml --limit $(hostname) -v
+
+# Retrieve password from 1password-cli
+eval $(op signin --account agilebits.1password.com)
+--extra-vars @<(echo ansible_become_pass: $(op item get zxkyxhferscdadhkvni6c55wsy --vault "Private" --format json |jq --raw-output '.fields[] | select (.id=="password").value'))
+
 ```
 
 Steps done manually:
  * First run of iTerm/zsh will configure [powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt
  * Import [Dracula iTerm theme](https://draculatheme.com/iterm): Preferences > Profiles > Colors > Color Presets ...
- * Alfred workflow -  1Password 
+ * Double-click Alfred workflows to import/activate 
  * Double-click Alfred Dracula theme to activate
+ * Configure [Dracula Slack theme](https://draculatheme.com/slack)
 
  Steps to do:
- * Activate [Dracula Slack theme](https://draculatheme.com/slack)
- * template files
+  * template files
  ** .ssh/config file
  ** .sh.local
  ** .gitconfig.local

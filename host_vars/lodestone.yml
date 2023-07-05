@@ -1,0 +1,14 @@
+---
+
+# apps to be installed via cask
+host_homebrew_cask_apps:
+  # - docker
+  - dropbox
+  # - firefox
+  - hazel
+  # - spotify
+  # - vagrant
+  # - virtualbox
+
+# packages installed via brew install
+host_homebrew_installed_packages: []

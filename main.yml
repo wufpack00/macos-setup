@@ -1,6 +1,15 @@
 ---
 - hosts: macos
   pre_tasks:
+    - name: Display all variables/facts known for a host
+      debug:
+        var: hostvars[inventory_hostname]
+      tags: debug_info
+    - name: Combine group and host vars
+      set_fact:
+        homebrew_cask_apps: "{{ homebrew_cask_apps + host_homebrew_cask_apps }}"
+        homebrew_installed_packages: "{{ homebrew_installed_packages + host_homebrew_installed_packages }}"
+      tags: homebrew
     - name: Create project directory if it does not exist
       ansible.builtin.file:
         path: "{{ project_dir }}"
@@ -22,11 +31,11 @@
       when: configure_dock
       tags: ['dock']
   tasks:
-    - import_tasks: tasks/omzsh.yml
+    - import_tasks: tasks/ohmyzsh.yml
       when: configure_ohmyzsh
       tags: ['omzsh']
     - import_tasks: tasks/dracula.yml
-      when: configure_ohmyzsh
+      when: configure_theme
       tags: ['dracula']
     - import_tasks: tasks/vscode.yml
       when: configure_vscode

@@ -1,0 +1,19 @@
+---
+#ansible_become_pass: "{{ lookup('community.general.onepassword', 'zxkyxhferscdadhkvni6c55wsy', errors='warn') | d(omit) }}"
+
+# apps to be installed via cask
+host_homebrew_cask_apps:
+  # - docker
+  - google-drive
+  - figma
+  - lens
+  - notion
+  - slack
+  - vnc-viewer
+
+# packages installed via brew install
+host_homebrew_installed_packages:
+  - go-task
+  - jq
+  - tfenv
+  - k9s

@@ -5,16 +5,12 @@
 homebrew_installed_packages:
   - bat
   - git
-  # - go-task
-  # - k9s
   - powerlevel10k
-  # - pre-commit
+  - pre-commit
   - openssl
   - tree
   - wget
   - zsh
-  - zsh-autosuggestions
-  - zsh-syntax-highlighting
 
 # packages to be uninstalled
 homebrew_uninstalled_packages: []
@@ -44,20 +40,20 @@ homebrew_cask_apps:
   # - dropbox
   # - firefox
   - google-chrome
-  - google-drive
-  - figma
+  #- google-drive
+  #- figma
   # - hazel
   - iterm2
   - itsycal
   # - lens
   - logitech-options
-  - notion
-  - slack
+  #- notion
+  #- slack
   # - spotify
   # - vagrant
   # - virtualbox
   - visual-studio-code
-  - vnc-viewer
+  #- vnc-viewer
   - zoom
 
 homebrew_cask_uninstalled_apps: []
