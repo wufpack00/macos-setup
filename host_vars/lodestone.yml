@@ -2,13 +2,34 @@
 
 # apps to be installed via cask
 host_homebrew_cask_apps:
-  # - docker
+  - 1password
+  - alfred
+  - authy
+  - bartender
+  - docker
   - dropbox
-  # - firefox
+  - firefox
+  - google-chrome
   - hazel
-  # - spotify
-  # - vagrant
-  # - virtualbox
+  - iterm2
+  - itsycal
+  - logitech-options
+  - openvpn-connect
+  - quicken
+  - spotify
+  - visual-studio-code
+  - zoom
 
 # packages installed via brew install
-host_homebrew_installed_packages: []
+host_homebrew_installed_packages:
+  - 1password-cli1
+  - bat
+  - git
+  - pre-commit
+  - powerlevel10k
+  - openssl
+  - tree
+  - wget
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
